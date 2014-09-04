@@ -9,7 +9,9 @@
   "browser": {
     "underscore": "backbone/node_modules/underscore",
     "plugin": "./src/javascript/vendor/jquery-plugin.js",
-    "OrbitControls": "./src/javascript/vendor/OrbitControls.js"
+    "OrbitControls": "./src/javascript/vendor/OrbitControls.js",
+    "FlyControls": "./src/javascript/vendor/FlyControls.js",
+    "ObjectControls": "./src/javascript/vendor/ObjectControls.js"
   },
   "browserify": {
     "transform": [
@@ -24,7 +26,8 @@
       "depends": [
         "jquery:$"
       ]
-    }
+    },
+    "./src/javascript/vendor/p5.js": "p5"
   },
   "devDependencies": {
     "browser-sync": "~1.3.6",
@@ -49,6 +52,7 @@
     "jquery": "~2.1.0",
     "three": "~0.68.0",
     "tween.js": "~0.14.0",
-    "express": "~4.8.7"
+    "express": "~4.8.7",
+    "p5": "~0.3.5"
   }
 }

@@ -3,7 +3,7 @@
   "mappings": "AAAA,IAAI;ECCF,uBAAuB,EAAE,SAAS;EAClC,sBAAsB,EAAE,WAAW;EC0VnC,cAAwC,ECiFhC,aAAoB;EDjF5B,iBAAwC,ECiFhC,aAAoB;EDjF5B,SAAwC,ECiFhC,aAAoB;EH1a5B,KAAK,EAAE,OAAI;EACX,WAAW,EAAE,UAAU",
   "sources": [
     "../sass/_typography.sass",
-    "../sass/Users/ericlevin/codeprojects/ThreeBoilerPlate/src/sass/_scss-mixins.scss",
+    "../sass/Users/ericlevin/codeprojects/PaintGame/src/sass/_scss-mixins.scss",
     "../sass/Users/ericlevin/.rvm/gems/ruby-1.9.3-p125/gems/compass-core-1.0.0.rc.1/stylesheets/compass/_support.scss",
     "../sass/Users/ericlevin/.rvm/gems/ruby-1.9.3-p125/gems/compass-core-1.0.0.rc.1/stylesheets/compass/css3/_transform.scss"
   ],

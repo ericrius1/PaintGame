@@ -1,7 +1,8 @@
 THREE = require 'three'
 require 'OrbitControls'
+require 'ObjectControls'
 TWEEN = require 'tween.js'
-# Fire = require './fire'
+$ = require 'jquery'
 
 
 time = null
@@ -15,16 +16,34 @@ renderer = new THREE.WebGLRenderer({antialias: true})
 renderer.setSize WIDTH, HEIGHT
 document.body.appendChild renderer.domElement
 controls = new THREE.OrbitControls(camera)
+debugger
+objectControls = new ObjectControls(camera)
+# controls = new THREE.FlyControls(camera)
 
-scene.add(new THREE.Mesh(new THREE.BoxGeometry(10, 10, 10), new THREE.MeshNormalMaterial()))
+
+box = new THREE.Mesh new THREE.BoxGeometry(5, 10, 5), new THREE.MeshNormalMaterial()
+scene.add box
+box.select = ->
+  console.log 'yar'
+objectControls.add box
+
+
+plane = new THREE.Mesh new THREE.PlaneGeometry(1000, 1000)
+plane.rotation.x = -Math.PI/2
+plane.position.y -=20
+
+scene.add plane
 
 animate = ()->
+  time = clock.getElapsedTime()
   requestAnimationFrame(animate)
   renderer.render scene, camera
   controls.update()
-  time = clock.getElapsedTime()
-  card.update(time)
+  objectControls.update()
   TWEEN.update()
+
+
+
 
 
 
@@ -37,3 +56,7 @@ onWindowResize = ()->
   camera.updateProjectionMatrix();
 
 animate()
+
+
+$(renderer.domElement).on 'click', (event)->
+  hitCheck(event)
