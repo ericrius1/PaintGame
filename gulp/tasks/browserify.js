@@ -12,6 +12,8 @@ var bundleLogger = require('../util/bundleLogger');
 var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source       = require('vinyl-source-stream');
+var uglify       = require('gulp-uglify')
+var buffer       = require('vinyl-buffer')
 
 gulp.task('browserify', function() {
   var bundler = browserify({
@@ -37,6 +39,10 @@ gulp.task('browserify', function() {
       // stream gulp compatible. Specifiy the
       // desired output filename here.
       .pipe(source('app.js'))
+      //convert from streaming to buffered vinyl file object
+      .pipe(buffer())
+      //minify
+      // .pipe(uglify())
       // Specify the output destination
       .pipe(gulp.dest('./build/'))
       // Log when bundling completes!
