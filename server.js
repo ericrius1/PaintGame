@@ -1,6 +1,10 @@
-var express = require('express')
+var express = require('express');
+var cors = require('cors');
+
 var app = express();
-app.set('port', (process.env.PORT || 5000))
+app.use(cors())
+
+app.set('port', (process.env.PORT || 5000));
 
 var router = express.Router();
 

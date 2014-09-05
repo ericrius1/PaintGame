@@ -40,6 +40,9 @@ scene.add floor
 box = new THREE.Mesh new THREE.BoxGeometry(50, 100, 50), new THREE.MeshNormalMaterial()
 box.position.y += 120
 scene.add box
+
+xhrConfig = (xhr)->
+  xhr.setRequestHeader("Access-Control-Alow-Origin", "*")
 box.select = ->
   console.log 'yar'
   box.visible = false
@@ -50,6 +53,10 @@ box.select = ->
   ctx.arc(x, y, 10, 0, Math.PI * 2)
   ctx.fill()
   canvasTexture.needsUpdate = true
+  m.request
+    method: 'GET'
+    url: 'http://glacial-temple-3112.herokuapp.com/'
+    config: xhrConfig
 objectControls.add box
 
 
