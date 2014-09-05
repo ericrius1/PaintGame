@@ -3,6 +3,7 @@ require 'OrbitControls'
 require 'ObjectControls'
 TWEEN = require 'tween.js'
 $ = require 'jquery'
+require 'mithril'
 
 
 time = null
