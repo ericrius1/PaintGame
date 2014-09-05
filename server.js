@@ -9,7 +9,8 @@ app.set('port', (process.env.PORT || 5000));
 var router = express.Router();
 
 router.get('/', function(req, res){
-  console.log('hello!!')
+  console.log('HELLO!!')
+  res.json(message: "welcome!");
 })
 
 app.listen(app.get('port'), function() {
