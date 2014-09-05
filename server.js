@@ -10,7 +10,7 @@ var router = express.Router();
 
 router.get('/', function(req, res){
   console.log('HELLO!!')
-  res.json(message: "welcome!");
+  res.json({message: "welcome!"});
 })
 
 app.listen(app.get('port'), function() {
